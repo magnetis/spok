@@ -9,13 +9,14 @@ module Workday
   # Bovespa => 1993 - 2022
   # TODO: add holidays before 2001 for :brasil (use :bovespa to infer?)
   # TODO: remove weekend dates from :brasil
-  holidays_file = File.join(File.dirname(__FILE__), "config/holidays.yml")
-  holidays = YAML.load_file(holidays_file)
 
-  HOLIDAYS ||= {
-    :brasil => Set.new(holidays["brasil"]),
-    :bovespa => Set.new(holidays["bovespa"])
-  }
+  CALENDARS = %i(brasil bovespa)
+
+  HOLIDAYS = CALENDARS.map do |calendar|
+    holidays_file = File.open(File.join(File.dirname(__FILE__), "config/#{calendar}.yml"))
+    holidays = YAML.safe_load(holidays_file.read, [Date])
+    [calendar, Set.new(holidays[calendar.to_s])]
+  end.to_h
 
   def restday?(calendar = :brasil)
     weekday = self.wday
