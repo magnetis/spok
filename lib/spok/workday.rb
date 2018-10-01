@@ -15,6 +15,7 @@ class Spok
       portugal
       vietnam
       poland
+      spain
     )
 
     # Public: Hash containing all holidays for each available calendar.
