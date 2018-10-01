@@ -25,6 +25,17 @@ class Spok
       [calendar, Set.new(holidays[calendar.to_s])]
     end.to_h
 
+    # Public: Hash containing all weekdays.
+    WEEKDAYS = {
+      sunday: 0,
+      monday: 1,
+      tuesday: 2,
+      wednesday: 3,
+      thrusday: 4,
+      friday: 5,
+      saturday: 6
+    }.freeze
+
     # Public: Checks if a given day is a restday.
     #
     # date     - The Date to be checked.
@@ -70,7 +81,7 @@ class Spok
     def self.weekend?(date)
       weekday = date.wday
 
-      weekday == 0 || weekday == 6
+      [WEEKDAYS[:saturday], WEEKDAYS[:sunday]].include? weekday
     end
 
     # Public: Checks if a given Date is on a holiday.
