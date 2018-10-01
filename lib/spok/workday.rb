@@ -9,7 +9,7 @@ class Spok
   # module.
   module Workday
     # Public: Array of available calendars.
-    CALENDARS = %i(brasil bovespa portugal)
+    CALENDARS = %i(brasil bovespa portugal costa_rica)
 
     # Public: Hash containing all holidays for each available calendar.
     HOLIDAYS = CALENDARS.map do |calendar|
