@@ -9,14 +9,18 @@ class HolidayFetcher
       coder.scalar = date.to_s
     end
 
-    private
+    def ==(other)
+      other.is_a?(Holiday) && other.date == date
+    end
+
+    protected
 
     attr_reader :date
   end
 
-  def fetch(country_code)
+  def fetch(country_code, year)
     uri = URI('https://holidayapi.pl/v1/holidays')
-    params = { country: country_code, year: 2000 }
+    params = { country: country_code, year: year }
     uri.query = URI.encode_www_form(params)
 
     res = Net::HTTP.get_response(uri)
