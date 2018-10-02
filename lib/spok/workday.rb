@@ -17,6 +17,7 @@ class Spok
       bovespa
       canada
       costa_rica
+      guatemala
       indonesia
       mexico
       netherlands

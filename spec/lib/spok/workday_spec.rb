@@ -65,6 +65,20 @@ describe Spok::Workday do
         end
       end
     end
+
+    context 'holidays using guatemala calendar' do
+      it 'is not a workday' do
+        ['2018-01-01', '2018-06-30', '2018-09-15', '2018-10-20'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :guatemala)).to eq(false)
+        end
+      end
+
+      it 'is a workday' do
+        ['2018-01-22', '2018-07-27', '2018-12-20'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :guatemala)).to eq(true)
+        end
+      end
+    end
   end
 
   describe '#restday?' do
