@@ -9,6 +9,10 @@ class Spok
 
   attr_reader :start_date, :end_date
 
+  mattr_reader :default_calendar
+
+  @@default_calendar = :brasil
+
   # Public: Parses a string into a Spok.
   #
   # dates_string - String containing the start and end dates for a period of
@@ -94,19 +98,19 @@ class Spok
   #
   #   spok.workdays
   #   # => [Mon, 02 Jan 2012, Tue, 03 Jan 2012]
-  def workdays(calendar = :brasil)
+  def workdays(calendar = Spok.default_calendar)
     (@start_date..@end_date).to_a.delete_if{ |date| Workday.restday?(date, calendar: calendar) }
   end
 
   # Public: Returns a Spok containing the same dates in a different calendar.
   #
-  # calendar - Symbol informing calendar for new Spok (default: :bovespa).
+  # calendar - Symbol informing calendar for new Spok (default: :brasil).
   #
   # Examples
   #
-  #   spok.to_calendar(:bovespa)
+  #   spok.to_calendar(:brasil)
   #   # => #<Spok:0x00007fbf122dba08 ...>
-  def to_calendar(calendar = :bovespa)
+  def to_calendar(calendar = Spok.default_calendar)
     Spok.new(
       Workday.last_workday(@start_date, calendar: calendar),
       Workday.last_workday(@end_date, calendar: calendar)
@@ -192,6 +196,12 @@ class Spok
   #   # => Sun, 01 Jan 2012..Tue, 03 Jan 2012
   def to_range
     (@start_date..@end_date)
+  end
+
+  class << self
+    def default_calendar=(calendar)
+      class_variable_set(:@@default_calendar, calendar)
+    end
   end
 
   private
