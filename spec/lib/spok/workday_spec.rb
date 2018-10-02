@@ -38,6 +38,13 @@ describe Spok::Workday do
       end
     end
 
+    context 'holidays using spain calendar' do
+      it 'is not a workday' do
+        ['2009-01-06', '2009-04-10', '2009-04-12'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :spain)).to eq(false)
+        end
+      end
+    end
   end
 
   describe '#restday?' do
