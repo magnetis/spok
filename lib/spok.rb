@@ -107,7 +107,7 @@ class Spok
   #
   # Examples
   #
-  #   spok.to_calendar(:bralis)
+  #   spok.to_calendar(:brasil)
   #   # => #<Spok:0x00007fbf122dba08 ...>
   def to_calendar(calendar = Spok.default_calendar)
     Spok.new(
