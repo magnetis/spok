@@ -14,7 +14,7 @@ class Spok
       brasil
       bovespa
       canada
-      costa-rica
+      costa_rica
       indonesia
       mexico
       netherlands
