@@ -12,13 +12,14 @@ class Spok
     CALENDARS = %i(
       brasil
       bovespa
+      canada
       indonesia
       mexico
+      netherlands
       poland
       portugal
-      vietnam
       spain
-      netherlands
+      vietnam
     )
 
     # Public: Hash containing all holidays for each available calendar.
@@ -51,7 +52,7 @@ class Spok
     #   # => false
     #
     # Returns a boolean.
-    def self.restday?(date, calendar: :brasil)
+    def self.restday?(date, calendar: Spok.default_calendar)
       self.weekend?(date) || self.holiday?(date, calendar: calendar)
     end
 
@@ -67,7 +68,7 @@ class Spok
     #   # => true
     #
     # Returns a boolean.
-    def self.workday?(date, calendar: :brasil)
+    def self.workday?(date, calendar: Spok.default_calendar)
       !restday?(date, calendar: calendar)
     end
 
@@ -99,7 +100,7 @@ class Spok
     #   # => true
     #
     # Returns a boolean.
-    def self.holiday?(date, calendar: :brasil)
+    def self.holiday?(date, calendar: Spok.default_calendar)
       HOLIDAYS[calendar].include?(date.to_date)
     end
 
@@ -113,7 +114,7 @@ class Spok
     # Examples
     #   Spok::Workday.last_workday(Date.new(2012, 10, 21))
     #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
-    def self.last_workday(date, calendar: :brasil)
+    def self.last_workday(date, calendar: Spok.default_calendar)
       return date if workday?(date, calendar: calendar)
 
       last_workday((date - 1.day), calendar: calendar)
@@ -129,7 +130,7 @@ class Spok
     # Examples
     #   Spok::Workday.next_workday(Date.new(2012, 10, 21))
     #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
-    def self.next_workday(date, calendar: :brasil)
+    def self.next_workday(date, calendar: Spok.default_calendar)
       return date if workday?(date, calendar: calendar)
 
       next_workday((date + 1.day), calendar: calendar)

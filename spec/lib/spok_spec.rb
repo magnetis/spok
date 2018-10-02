@@ -206,4 +206,14 @@ describe Spok do
     subject { Spok.new(sunday, tuesday).to_range }
     it { is_expected.to eq((sunday..tuesday)) }
   end
+
+  describe '#default_calendar' do
+    it 'changes default_calendar' do
+      default_calendar_was = Spok.default_calendar
+      spok = double("spok", :default_calendar => :bovespa)
+
+      expect(default_calendar_was).not_to eq(spok.default_calendar)
+      expect(default_calendar_was).to eq(:brasil)
+    end
+  end
 end

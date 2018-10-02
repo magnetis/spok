@@ -79,6 +79,11 @@ period.workdays
 # => [Wed, 10 Oct 2018, Thu, 11 Oct 2018]
 ```
 
+### Set default calendar
+```ruby
+Spok.default_calendar = :bovespa
+```
+
 ## Documentation
 
 The complete documentation in the RDoc format is available here:
