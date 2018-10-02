@@ -1,11 +1,12 @@
-require "spok/version"
+require 'spok/version'
 require 'spok/workday'
 
 # Public: Class responsible for dealing with periods of Dates, considering
 # workdays and restdays.
 class Spok
   # Internal: String specifying format for dates in the period.
-  DATE_FORMAT = '%Y%m%d'
+  DATE_FORMAT = '%Y%m%d'.freeze
+
   attr_reader :start_date, :end_date
 
   # Public: Parses a string into a Spok.
@@ -28,10 +29,10 @@ class Spok
     start_date, end_date = dates_string.split('-')
 
     if start_date && end_date
-      Spok.new(::Date.parse(start_date), ::Date.parse(end_date))
-    else
-      nil
+      return Spok.new(::Date.parse(start_date), ::Date.parse(end_date))
     end
+
+    nil
   end
 
   # Public: Initialize a Spok.
@@ -169,18 +170,18 @@ class Spok
   # equal when they are both instances of Spok, and have the same start and
   # end dates.
   #
-  # other_spok - Spok to be checked against.
+  # other - Spok to be checked against.
   #
   # Examples
   #
-  #   spok == other_spok
+  #   spok == other
   #   # => false
   #
   # Returns a boolean.
-  def ==(other_spok)
-    other_spok.class == self.class &&
-    other_spok.start_date == @start_date &&
-    other_spok.end_date == @end_date
+  def ==(other)
+    other.class == self.class &&
+      other.start_date == @start_date &&
+      other.end_date == @end_date
   end
 
   # Public: Returns a range containing the Dates in the Spok.
@@ -204,10 +205,11 @@ class Spok
   end
 
   def validate!
-    raise ArgumentError.new("Start date must be present.") unless @start_date
-    raise ArgumentError.new("End date must be present.") unless @end_date
+    raise ArgumentError, 'Start date must be present.' unless @start_date
+    raise ArgumentError, 'End date must be present.' unless @end_date
+
     if @start_date > @end_date
-      raise ArgumentError.new("End date (#{@end_date}) must be greater or equal to start date (#{@start_date})")
+      raise ArgumentError, "End date (#{@end_date}) must be greater or equal to start date (#{@start_date})"
     end
   end
 end
