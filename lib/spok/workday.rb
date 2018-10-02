@@ -34,6 +34,7 @@ class Spok
       switzerland
       united_states
       vietnam
+      spain
     )
 
     # Public: Hash containing all holidays for each available calendar.
