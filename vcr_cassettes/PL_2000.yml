@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 02 Oct 2018 15:57:01 GMT
+      - Tue, 02 Oct 2018 16:32:20 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -29,9 +29,9 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - PHPSESSID=5tnvfod1clhe5nlnbc2vgsuhvn; path=/
-      - __cfduid=dc4c0d09fd3f10ef45f2139a7f4be0b1b1538495821; expires=Wed, 02-Oct-19
-        15:57:01 GMT; path=/; domain=.holidayapi.pl; HttpOnly; Secure
+      - PHPSESSID=r5c1l2pda2p95ar5h68ajdo4vo; path=/
+      - __cfduid=ddfd69a5b31b92a747645223b93ffd27a1538497939; expires=Wed, 02-Oct-19
+        16:32:19 GMT; path=/; domain=.holidayapi.pl; HttpOnly; Secure
       X-Powered-By:
       - PHP/7.2.10
       - PleskLin
@@ -49,66 +49,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 46385cc1ffbfb4e6-VNO
+      - 4638907cbd96b50a-VNO
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJzdGF0dXMiOjIwMCwiaG9saWRheXMiOnsiMjAwMC0wMS0wMSI6W3sibmFtZSI6Ik5vd3kgUm9rIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDEtMDEifV0sIjIwMDAtMDEtMDYiOlt7Im5hbWUiOiLFmndpxJl0byBUcnplY2ggS3LDs2xpIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDEtMDYifV0sIjIwMDAtMDQtMjMiOlt7Im5hbWUiOiJOaWVkemllbGEgV2llbGthbm9jbmEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNC0yMyJ9XSwiMjAwMC0wNC0yNCI6W3sibmFtZSI6IlBvbmllZHppYcWCZWsgV2llbGthbm9jbnkiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNC0yNCJ9XSwiMjAwMC0wNS0wMSI6W3sibmFtZSI6IsWad2nEmXRvIFBhxYRzdHdvd2UiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNS0wMSJ9XSwiMjAwMC0wNS0wMyI6W3sibmFtZSI6IsWad2nEmXRvIE5hcm93b2RlIFRyemVjaWVnbyBNYWphIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDUtMDMifV0sIjIwMDAtMDYtMTEiOlt7Im5hbWUiOiJaZXPFgmFuaWUgRHVjaGEgxZp3acSZdGVnbyIsImNvdW50cnkiOiJQTCIsImRhdGUiOiIyMDAwLTA2LTExIn1dLCIyMDAwLTA2LTIyIjpbeyJuYW1lIjoiRHppZcWEIEJvxbxlZ28gQ2lhxYJhIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDYtMjIifV0sIjIwMDAtMDgtMTUiOlt7Im5hbWUiOiJXbmllYm93emnEmWNpZSBOYWrFm3dpxJl0c3plaiBNYXJpaSBQYW5ueSIsImNvdW50cnkiOiJQTCIsImRhdGUiOiIyMDAwLTA4LTE1In1dLCIyMDAwLTExLTAxIjpbeyJuYW1lIjoiVXJvY3p5c3RvxZvEhyBXc3p5c3RraWNoIMWad2nEmXR5Y2giLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMS0wMSJ9XSwiMjAwMC0xMS0xMSI6W3sibmFtZSI6Ik5hcm9kb3dlIMWad2nEmXRvIE5pZXBvZGxlZ8WCb8WbY2kiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMS0xMSJ9XSwiMjAwMC0xMi0yNSI6W3sibmFtZSI6IlBpZXJ3c3p5IGR6aWXFhCBCb8W8ZWdvIE5hcm9kemVuaWEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMi0yNSJ9XSwiMjAwMC0xMi0yNiI6W3sibmFtZSI6IkRydWdpIGR6aWXFhCBCb8W8ZWdvIE5hcm9kemVuaWEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMi0yNiJ9XX19
     http_version: 
-  recorded_at: Tue, 02 Oct 2018 15:57:01 GMT
-- request:
-    method: get
-    uri: https://holidayapi.pl/v1/holidays?country=PL&year=2000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - holidayapi.pl
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 02 Oct 2018 15:57:01 GMT
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - PHPSESSID=r0isjpevtu1n1mvlbr7c0hm3df; path=/
-      - __cfduid=dc4c0d09fd3f10ef45f2139a7f4be0b1b1538495821; expires=Wed, 02-Oct-19
-        15:57:01 GMT; path=/; domain=.holidayapi.pl; HttpOnly; Secure
-      X-Powered-By:
-      - PHP/7.2.10
-      - PleskLin
-      Expires:
-      - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
-      - no-store, no-cache, must-revalidate
-      Pragma:
-      - no-cache
-      X-Cache-Status:
-      - MISS
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 46385cc4eb92b4e6-VNO
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJzdGF0dXMiOjIwMCwiaG9saWRheXMiOnsiMjAwMC0wMS0wMSI6W3sibmFtZSI6Ik5vd3kgUm9rIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDEtMDEifV0sIjIwMDAtMDEtMDYiOlt7Im5hbWUiOiLFmndpxJl0byBUcnplY2ggS3LDs2xpIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDEtMDYifV0sIjIwMDAtMDQtMjMiOlt7Im5hbWUiOiJOaWVkemllbGEgV2llbGthbm9jbmEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNC0yMyJ9XSwiMjAwMC0wNC0yNCI6W3sibmFtZSI6IlBvbmllZHppYcWCZWsgV2llbGthbm9jbnkiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNC0yNCJ9XSwiMjAwMC0wNS0wMSI6W3sibmFtZSI6IsWad2nEmXRvIFBhxYRzdHdvd2UiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0wNS0wMSJ9XSwiMjAwMC0wNS0wMyI6W3sibmFtZSI6IsWad2nEmXRvIE5hcm93b2RlIFRyemVjaWVnbyBNYWphIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDUtMDMifV0sIjIwMDAtMDYtMTEiOlt7Im5hbWUiOiJaZXPFgmFuaWUgRHVjaGEgxZp3acSZdGVnbyIsImNvdW50cnkiOiJQTCIsImRhdGUiOiIyMDAwLTA2LTExIn1dLCIyMDAwLTA2LTIyIjpbeyJuYW1lIjoiRHppZcWEIEJvxbxlZ28gQ2lhxYJhIiwiY291bnRyeSI6IlBMIiwiZGF0ZSI6IjIwMDAtMDYtMjIifV0sIjIwMDAtMDgtMTUiOlt7Im5hbWUiOiJXbmllYm93emnEmWNpZSBOYWrFm3dpxJl0c3plaiBNYXJpaSBQYW5ueSIsImNvdW50cnkiOiJQTCIsImRhdGUiOiIyMDAwLTA4LTE1In1dLCIyMDAwLTExLTAxIjpbeyJuYW1lIjoiVXJvY3p5c3RvxZvEhyBXc3p5c3RraWNoIMWad2nEmXR5Y2giLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMS0wMSJ9XSwiMjAwMC0xMS0xMSI6W3sibmFtZSI6Ik5hcm9kb3dlIMWad2nEmXRvIE5pZXBvZGxlZ8WCb8WbY2kiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMS0xMSJ9XSwiMjAwMC0xMi0yNSI6W3sibmFtZSI6IlBpZXJ3c3p5IGR6aWXFhCBCb8W8ZWdvIE5hcm9kemVuaWEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMi0yNSJ9XSwiMjAwMC0xMi0yNiI6W3sibmFtZSI6IkRydWdpIGR6aWXFhCBCb8W8ZWdvIE5hcm9kemVuaWEiLCJjb3VudHJ5IjoiUEwiLCJkYXRlIjoiMjAwMC0xMi0yNiJ9XX19
-    http_version: 
-  recorded_at: Tue, 02 Oct 2018 15:57:01 GMT
+  recorded_at: Tue, 02 Oct 2018 16:32:20 GMT
 recorded_with: VCR 4.0.0
