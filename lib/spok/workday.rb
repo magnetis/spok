@@ -12,12 +12,13 @@ class Spok
     CALENDARS = %i(
       brasil
       bovespa
+      canada
       indonesia
       mexico
       poland
       portugal
+      spain
       vietnam
-      canada
     )
 
     # Public: Hash containing all holidays for each available calendar.
