@@ -45,6 +45,14 @@ describe Spok::Workday do
         end
       end
     end
+
+    context 'holidays using dutch calendar' do
+      it 'is not a workday' do
+        ['2019-06-10', '2019-12-25', '2019-12-26'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :netherlands)).to eq(false)
+        end
+      end
+    end
   end
 
   describe '#restday?' do
