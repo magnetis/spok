@@ -110,12 +110,12 @@ describe Spok do
       end
     end
 
-    context 'when brasil is the calendar' do
-      subject { described_class.new(sunday, tuesday).to_calendar(:brasil) }
+    context 'when brazil is the calendar' do
+      subject { described_class.new(sunday, tuesday).to_calendar(:brazil) }
 
       context 'and the start date is holiday' do
         let(:start_date) { Date.new(2013, 9, 6) }
-        let(:sunday)      { Date.new(2013, 9, 7) } # brasil holiday
+        let(:sunday)      { Date.new(2013, 9, 7) } # brazil holiday
         let(:tuesday)      { Date.new(2013, 9, 10) }
         it 'returns the last workday as the start date' do
           expect(subject.start_date).to eq(start_date)
@@ -124,7 +124,7 @@ describe Spok do
 
       context 'end date on a bovespa holiday' do
         let(:sunday)    { Date.new(2013, 9, 5) }
-        let(:tuesday)    { Date.new(2013, 9, 7) } # brasil holiday
+        let(:tuesday)    { Date.new(2013, 9, 7) } # brazil holiday
         let(:end_date) { Date.new(2013, 9, 6) }
         it 'returns the last bovespa workday as the end date' do
           expect(subject.end_date).to eq(end_date)
@@ -213,7 +213,7 @@ describe Spok do
       spok = double("spok", :default_calendar => :bovespa)
 
       expect(default_calendar_was).not_to eq(spok.default_calendar)
-      expect(default_calendar_was).to eq(:brasil)
+      expect(default_calendar_was).to eq(:brazil)
     end
   end
 end

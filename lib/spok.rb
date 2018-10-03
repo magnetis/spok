@@ -11,7 +11,7 @@ class Spok
 
   mattr_reader :default_calendar
 
-  @@default_calendar = :brasil
+  @@default_calendar = :brazil
 
   # Public: Parses a string into a Spok.
   #
@@ -92,7 +92,7 @@ class Spok
   # Public: Returns an array containing all workdays on Spok.
   #
   # calendar - Symbol informing in which calendar to check for workdays
-  #            (default: :brasil).
+  #            (default: :brazil).
   #
   # Examples
   #
@@ -104,11 +104,11 @@ class Spok
 
   # Public: Returns a Spok containing the same dates in a different calendar.
   #
-  # calendar - Symbol informing calendar for new Spok (default: :brasil).
+  # calendar - Symbol informing calendar for new Spok (default: :brazil).
   #
   # Examples
   #
-  #   spok.to_calendar(:brasil)
+  #   spok.to_calendar(:brazil)
   #   # => #<Spok:0x00007fbf122dba08 ...>
   def to_calendar(calendar = Spok.default_calendar)
     Spok.new(
