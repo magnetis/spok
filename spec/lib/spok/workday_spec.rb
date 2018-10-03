@@ -21,7 +21,7 @@ describe Spok::Workday do
       end
     end
 
-    context 'holidays using brasil calendar' do
+    context 'holidays using brazil calendar' do
       it 'is not a workday' do
         ['2012-06-07', '2012-09-07', '2012-10-12',
          '2012-11-02', '2012-11-15', '2012-12-25'].each do |holiday|
@@ -158,12 +158,12 @@ describe Spok::Workday do
 
   describe '#holiday?' do
     it 'returns false when date is not a holiday on the given calendar' do
-      expect(described_class.holiday?(Date.new(2018, 05, 02), calendar: :brasil)).to eq(false)
+      expect(described_class.holiday?(Date.new(2018, 05, 02), calendar: :brazil)).to eq(false)
       expect(described_class.holiday?(Date.new(2018, 12, 15), calendar: :bovespa)).to eq(false)
     end
 
     it 'returns true when date is a holiday on the given calendar' do
-      expect(described_class.holiday?(Date.new(2018, 05, 01), calendar: :brasil)).to eq(true)
+      expect(described_class.holiday?(Date.new(2018, 05, 01), calendar: :brazil)).to eq(true)
       expect(described_class.holiday?(Date.new(2018, 12, 25), calendar: :bovespa)).to eq(true)
     end
   end

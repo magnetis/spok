@@ -44,7 +44,7 @@ Spok::Workday.workday?(Date.new(2012, 12, 24), calendar: :bovespa)
 # => false
 ```
 
-If `calendar` is not informed, it will default to the `:brasil` calendar.
+If `calendar` is not informed, it will default to the `:brazil` calendar.
 
 The available calendars are defined with `.yml` files [here](lib/spok/config/).
 
