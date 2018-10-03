@@ -18,7 +18,7 @@ describe GenerateHolidayCalendar do
       file.rewind
       expect(File.read(file.path)).to start_with(<<~YAML)
         ---
-        PL:
+        #{File.basename(file.path, '.yml')}:
         - 2000-01-01
       YAML
     end
@@ -41,7 +41,7 @@ describe GenerateHolidayCalendar do
         file.rewind
         expect(File.read(file.path)).to eq(<<~YAML)
           ---
-          PL:
+          #{File.basename(file.path, '.yml')}:
           - 2018-05-01
         YAML
       end
@@ -67,7 +67,7 @@ describe GenerateHolidayCalendar do
         file.rewind
         expect(File.read(file.path)).to eq(<<~YAML)
           ---
-          PL:
+          #{File.basename(file.path, '.yml')}:
           - 2016-05-01
           - 2017-05-01
           - 2018-05-01

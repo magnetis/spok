@@ -1,3 +1,5 @@
+require 'net/http'
+
 class HolidayFetcher
   class Holiday
     def initialize(date)
@@ -25,8 +27,6 @@ class HolidayFetcher
 
     res = Net::HTTP.get_response(uri)
 
-    if res.is_a?(Net::HTTPSuccess)
-      JSON.parse(res.body)['holidays'].keys.map { |date| Holiday.new(date) }
-    end
+    JSON.parse(res.body)['holidays'].keys.map { |date| Holiday.new(date) } if res.is_a?(Net::HTTPSuccess)
   end
 end
