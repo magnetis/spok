@@ -11,6 +11,7 @@ class Spok
     # Public: Array of available calendars.
 
     CALENDARS = %i(
+      austria
       australia
       austria
       belgium
