@@ -12,7 +12,7 @@ class Spok
 
     CALENDARS = %i(
       austria
-      brasil
+      brazil
       bovespa
       canada
       costa_rica
@@ -47,7 +47,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -63,7 +63,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -95,7 +95,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -112,7 +112,7 @@ class Spok
     #
     # date     - End Date to check for workdays.
     # calendar - Symbol informing in which calendar to check for workdays
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #   Spok::Workday.last_workday(Date.new(2012, 10, 21))
@@ -128,7 +128,7 @@ class Spok
     #
     # date     - Start Date to check for workdays.
     # calendar - Symbol informing in which calendar to check for workdays
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #   Spok::Workday.next_workday(Date.new(2012, 10, 21))
