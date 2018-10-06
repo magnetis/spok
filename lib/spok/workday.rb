@@ -12,6 +12,7 @@ class Spok
 
     CALENDARS = %i(
       austria
+      belgium
       brazil
       bovespa
       canada
