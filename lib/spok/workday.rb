@@ -18,6 +18,7 @@ class Spok
       canada
       colombia
       costa_rica
+      germany
       guatemala
       indonesia
       liechtenstein
