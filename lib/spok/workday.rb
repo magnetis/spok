@@ -9,13 +9,20 @@ class Spok
   # module.
   module Workday
     # Public: Array of available calendars.
+
     CALENDARS = %i(
-      brasil
+      austria
+      brazil
       bovespa
+      canada
+      costa_rica
+      guatemala
       indonesia
       mexico
+      netherlands
       poland
       portugal
+      spain
       vietnam
     )
 
@@ -41,7 +48,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -49,7 +56,7 @@ class Spok
     #   # => false
     #
     # Returns a boolean.
-    def self.restday?(date, calendar: :brasil)
+    def self.restday?(date, calendar: Spok.default_calendar)
       self.weekend?(date) || self.holiday?(date, calendar: calendar)
     end
 
@@ -57,7 +64,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -65,7 +72,7 @@ class Spok
     #   # => true
     #
     # Returns a boolean.
-    def self.workday?(date, calendar: :brasil)
+    def self.workday?(date, calendar: Spok.default_calendar)
       !restday?(date, calendar: calendar)
     end
 
@@ -89,7 +96,7 @@ class Spok
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #
@@ -97,7 +104,7 @@ class Spok
     #   # => true
     #
     # Returns a boolean.
-    def self.holiday?(date, calendar: :brasil)
+    def self.holiday?(date, calendar: Spok.default_calendar)
       HOLIDAYS[calendar].include?(date.to_date)
     end
 
@@ -106,12 +113,12 @@ class Spok
     #
     # date     - End Date to check for workdays.
     # calendar - Symbol informing in which calendar to check for workdays
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #   Spok::Workday.last_workday(Date.new(2012, 10, 21))
     #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
-    def self.last_workday(date, calendar: :brasil)
+    def self.last_workday(date, calendar: Spok.default_calendar)
       return date if workday?(date, calendar: calendar)
 
       last_workday((date - 1.day), calendar: calendar)
@@ -122,12 +129,12 @@ class Spok
     #
     # date     - Start Date to check for workdays.
     # calendar - Symbol informing in which calendar to check for workdays
-    #            (default: :brasil).
+    #            (default: :brazil).
     #
     # Examples
     #   Spok::Workday.next_workday(Date.new(2012, 10, 21))
     #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
-    def self.next_workday(date, calendar: :brasil)
+    def self.next_workday(date, calendar: Spok.default_calendar)
       return date if workday?(date, calendar: calendar)
 
       next_workday((date + 1.day), calendar: calendar)

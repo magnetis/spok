@@ -21,7 +21,7 @@ describe Spok::Workday do
       end
     end
 
-    context 'holidays using brasil calendar' do
+    context 'holidays using brazil calendar' do
       it 'is not a workday' do
         ['2012-06-07', '2012-09-07', '2012-10-12',
          '2012-11-02', '2012-11-15', '2012-12-25'].each do |holiday|
@@ -38,6 +38,47 @@ describe Spok::Workday do
       end
     end
 
+    context 'days using spanish calendar' do
+      it 'is not a workday' do
+        ['2009-01-06', '2009-04-10', '2009-04-12'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :spain)).to eq(false)
+        end
+      end
+
+      it 'is a workday' do
+        ['2009-01-07', '2019-01-14', '2020-04-22'].each do |workday|
+          expect(described_class.workday?(Date.parse(workday), calendar: :spain)).to eq(true)
+        end
+      end
+    end
+
+    context 'days using dutch calendar' do
+      it 'is not a workday' do
+        ['2019-06-10', '2019-12-25', '2019-12-26'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :netherlands)).to eq(false)
+        end
+      end
+
+      it 'is a workday' do
+        ['2010-06-10', '2009-09-11', '2019-12-02'].each do |workday|
+          expect(described_class.workday?(Date.parse(workday), calendar: :netherlands)).to eq(true)
+        end
+      end
+    end
+
+    context 'holidays using guatemala calendar' do
+      it 'is not a workday' do
+        ['2018-01-01', '2018-06-30', '2018-09-15', '2018-10-20'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :guatemala)).to eq(false)
+        end
+      end
+
+      it 'is a workday' do
+        ['2018-01-22', '2018-07-27', '2018-12-20'].each do |holiday|
+          expect(described_class.workday?(Date.parse(holiday), calendar: :guatemala)).to eq(true)
+        end
+      end
+    end
   end
 
   describe '#restday?' do
@@ -131,12 +172,12 @@ describe Spok::Workday do
 
   describe '#holiday?' do
     it 'returns false when date is not a holiday on the given calendar' do
-      expect(described_class.holiday?(Date.new(2018, 05, 02), calendar: :brasil)).to eq(false)
+      expect(described_class.holiday?(Date.new(2018, 05, 02), calendar: :brazil)).to eq(false)
       expect(described_class.holiday?(Date.new(2018, 12, 15), calendar: :bovespa)).to eq(false)
     end
 
     it 'returns true when date is a holiday on the given calendar' do
-      expect(described_class.holiday?(Date.new(2018, 05, 01), calendar: :brasil)).to eq(true)
+      expect(described_class.holiday?(Date.new(2018, 05, 01), calendar: :brazil)).to eq(true)
       expect(described_class.holiday?(Date.new(2018, 12, 25), calendar: :bovespa)).to eq(true)
     end
   end

@@ -44,7 +44,7 @@ Spok::Workday.workday?(Date.new(2012, 12, 24), calendar: :bovespa)
 # => false
 ```
 
-If `calendar` is not informed, it will default to the `:brasil` calendar.
+If `calendar` is not informed, it will default to the `:brazil` calendar.
 
 The available calendars are defined with `.yml` files [here](lib/spok/config/).
 
@@ -77,6 +77,11 @@ require 'spok'
 period = Spok.new(Date.new(2018, 10, 10), Date.new(2018, 10, 14))
 period.workdays
 # => [Wed, 10 Oct 2018, Thu, 11 Oct 2018]
+```
+
+### Set default calendar
+```ruby
+Spok.default_calendar = :bovespa
 ```
 
 ## Documentation
