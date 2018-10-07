@@ -10,6 +10,7 @@ class Spok
   module Workday
     # Public: Array of available calendars.
     CALENDARS = %i(
+      australia
       brasil
       bovespa
       indonesia
