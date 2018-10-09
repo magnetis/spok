@@ -1,17 +1,14 @@
-require 'json'
-require 'yaml'
+require_relative 'holiday_fetcher'
+require_relative 'yaml_exporter'
 
-class YamlExporter
-  def export(file, holidays)
-    holidays_hash = { File.basename(file.path, '.yml') => holidays }
-    file.write(holidays_hash.to_yaml)
-  end
-end
-
-class GenerateHolidayCalendar
-  def initialize(holiday_fetcher:, exporter: YamlExporter.new)
+class HolidayCalendarGenerator
+  def initialize(holiday_fetcher:, exporter:)
     @holiday_fetcher = holiday_fetcher
     @exporter = exporter
+  end
+
+  def self.build
+    new(holiday_fetcher: HolidayFetcher.new, exporter: YamlExporter.new)
   end
 
   def generate(file:, country_code:, years:)

@@ -1,9 +1,8 @@
 require 'spec_helper'
 require 'tempfile'
-require_relative '../../helpers/generate_holiday_calendar'
-require_relative '../../helpers/holiday_fetcher'
+require_relative '../../helpers/holiday_calendar_generator'
 
-describe GenerateHolidayCalendar do
+describe HolidayCalendarGenerator do
   subject { described_class.new(holiday_fetcher: holiday_fetcher, exporter: exporter) }
 
   let(:file) { Tempfile.new }
