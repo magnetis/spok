@@ -1,8 +1,8 @@
 require_relative 'holiday_calendar_generator'
 require_relative 'holiday_fetcher'
 
-desc 'Generate holiday calender for given country'
-task :generate_calender, [:start_year, :end_year] do |t, args|
+desc 'Generate holiday calenders for given countries'
+task :generate_calenders, [:start_year, :end_year] do |t, args|
   Country = Struct.new(:code, :name)
 
   years = (args[:start_year]..args[:end_year])
