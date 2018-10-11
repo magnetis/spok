@@ -6,6 +6,13 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'vcr'
 
+VCR.configure do |config|
+  config.cassette_library_dir = "vcr_cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.default_cassette_options = { allow_playback_repeats: true }
+end
+
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
@@ -16,11 +23,4 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
   config.expect_with(:rspec) { |c| c.syntax = %i(expect) }
-end
-
-VCR.configure do |config|
-  config.cassette_library_dir = "vcr_cassettes"
-  config.hook_into :webmock
-  config.configure_rspec_metadata!
-  config.default_cassette_options = { allow_playback_repeats: true }
 end
