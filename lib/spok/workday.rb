@@ -31,6 +31,7 @@ class Spok
       spain
       ukraine
       switzerland
+      united_states
       vietnam
     )
 
