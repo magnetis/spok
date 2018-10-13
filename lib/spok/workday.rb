@@ -21,6 +21,7 @@ class Spok
       malaysia
       mexico
       netherlands
+      philippines
       poland
       portugal
       spain
