@@ -23,6 +23,7 @@ class Spok
       france
       germany
       guatemala
+      india
       indonesia
       liechtenstein
       malaysia
