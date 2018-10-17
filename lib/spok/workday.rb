@@ -18,6 +18,7 @@ class Spok
       costa_rica
       guatemala
       indonesia
+      latvia
       malaysia
       mexico
       netherlands
