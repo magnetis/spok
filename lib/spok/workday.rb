@@ -16,6 +16,7 @@ class Spok
       bovespa
       canada
       costa_rica
+      ghana
       guatemala
       indonesia
       malaysia
