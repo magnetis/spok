@@ -15,6 +15,7 @@ class Spok
       brazil
       bovespa
       canada
+      china
       costa_rica
       guatemala
       indonesia
