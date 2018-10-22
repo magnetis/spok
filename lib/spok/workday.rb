@@ -31,6 +31,7 @@ class Spok
       netherlands
       poland
       portugal
+      singapore
       spain
       ukraine
       switzerland
