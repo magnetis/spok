@@ -23,6 +23,7 @@ class Spok
       netherlands
       poland
       portugal
+      singapore
       spain
       switzerland
       vietnam
