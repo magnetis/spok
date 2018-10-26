@@ -19,11 +19,13 @@ class Spok
       guatemala
       indonesia
       liechtenstein
+      malaysia
       mexico
       netherlands
       poland
       portugal
       spain
+      ukraine
       switzerland
       vietnam
     )
