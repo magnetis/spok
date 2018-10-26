@@ -18,12 +18,14 @@ class Spok
       costa_rica
       guatemala
       indonesia
+      malaysia
       mexico
       netherlands
       poland
       portugal
       spain
       ukraine
+      switzerland
       vietnam
     )
 
