@@ -24,6 +24,7 @@ class Spok
       poland
       portugal
       spain
+      ukraine
       switzerland
       vietnam
     )
