@@ -19,6 +19,7 @@ class Spok
       costa_rica
       guatemala
       indonesia
+      liechtenstein
       malaysia
       mexico
       netherlands
