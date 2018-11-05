@@ -20,6 +20,7 @@ class Spok
       canada
       colombia
       costa_rica
+      dominican_republic
       france
       germany
       guatemala
