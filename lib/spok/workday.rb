@@ -26,7 +26,6 @@ class Spok
       india
       indonesia
       liechtenstein
-      malaysia
       mexico
       netherlands
       poland
