@@ -84,6 +84,15 @@ period.workdays
 Spok.default_calendar = :bovespa
 ```
 
+### Adding custom calendars
+
+If you need to add your own restday calendar, call `Spok.add_calendar` on your
+application boot:
+
+```ruby
+Spok.add_calendar(:custom_calendar, './config/calendars/custom.yml')
+```
+
 ## Documentation
 
 The complete documentation in the RDoc format is available here:

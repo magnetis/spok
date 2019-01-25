@@ -1,6 +1,8 @@
 require 'spok/version'
 require 'spok/workday'
+require 'spok/calendars'
 
+Spok::Calendars.preload
 # Public: Class responsible for dealing with periods of Dates, considering
 # workdays and restdays.
 class Spok
@@ -12,6 +14,19 @@ class Spok
   mattr_reader :default_calendar
 
   @@default_calendar = :brazil
+
+  # Public: Add a new calendar of holidays to Spok. Calendars are defined with
+  # YAML files containing a single key with its name and an array of dates.
+  #
+  # For reference of builtin calendars, please see the `lib/spok/config` directory.
+  #
+  # name - A String or Symbol with the name of the calendar.
+  # path - A String with the full path for the calendar YAML file.
+  #
+  # Returns nothing.
+  def self.add_calendar(name, path)
+    Spok::Calendars.add(name, path)
+  end
 
   # Public: Parses a string into a Spok.
   #

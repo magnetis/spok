@@ -1,52 +1,11 @@
 require 'active_support'
 require 'active_support/core_ext'
-require 'set'
-require 'yaml'
 
 class Spok
   # Public: Various methods useful for checking for restdays and workdays.
   # All methods are module methods and should be called on the Spok::Workday
   # module.
   module Workday
-    # Public: Array of available calendars.
-
-    CALENDARS = %i(
-      austria
-      australia
-      austria
-      belgium
-      brazil
-      bovespa
-      canada
-      colombia
-      costa_rica
-      france
-      germany
-      guatemala
-      india
-      indonesia
-      liechtenstein
-      mexico
-      netherlands
-      poland
-      portugal
-      singapore
-      spain
-      ukraine
-      switzerland
-      united_states
-      vietnam
-      spain
-      vietnam
-    )
-
-    # Public: Hash containing all holidays for each available calendar.
-    HOLIDAYS = CALENDARS.map do |calendar|
-      holidays_file = File.open(File.join(File.dirname(__FILE__), "config/#{calendar}.yml"))
-      holidays = YAML.safe_load(holidays_file.read, [Date])
-      [calendar, Set.new(holidays[calendar.to_s])]
-    end.to_h
-
     # Public: Hash containing all weekdays.
     WEEKDAYS = {
       sunday: 0,
@@ -119,7 +78,8 @@ class Spok
     #
     # Returns a boolean.
     def self.holiday?(date, calendar: Spok.default_calendar)
-      HOLIDAYS[calendar].include?(date.to_date)
+      dates = Spok::Calendars.get(calendar)
+      dates.include?(date.to_date)
     end
 
     # Public: Returns the last workday until the informed date.
