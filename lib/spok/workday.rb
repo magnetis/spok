@@ -16,6 +16,7 @@ class Spok
       austria
       belgium
       brazil
+      bulgaria
       bovespa
       canada
       colombia
