@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0] - 2019-10-24
+
+* Relax `activesupport` dependency to include the `6.x` series
+
 ## [2.0.0] - 2019-10-07
 
 - Added calendars for `australia`, `austria`, `belgium`, `colombia`, `france`, `germany`,
