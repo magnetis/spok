@@ -25,17 +25,20 @@ Or install it yourself as:
 
 ### Dealing with workdays
 
-You can use the `Spok::Workday` module to check if a date is either a restday or a workday:
+You can use the Spok to check if a date is either a rest day or a workday:
 
 ```ruby
 require 'spok'
 
-Spok::Workday.workday?(Date.new(2012, 12, 24))
+Spok.restday?(Date.new(2012, 12, 24))
+# => false
+
+Spok.workday?(Date.new(2012, 12, 24))
 # => true
 ```
 
 Spok also supports different calendars for checking if a date is a workday or a
-restday
+restday.
 
 ```ruby
 require 'spok'
