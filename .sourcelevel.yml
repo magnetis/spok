@@ -1,0 +1,30 @@
+engines:
+  grep:
+    enabled: true
+    config:
+      patterns:
+        blocklist:
+          pattern: /black[_\-]?list/i
+          annotation: "Do not use 'Blacklist'. Prefer the term 'Block list'"
+          categories: 'Style'
+          path_patterns:
+            - "**/*.rb"
+        allowlist:
+          pattern: /white[_\-]?list/i
+          annotation: "Do not use 'White list'. Prefer the term 'Allow list'"
+          categories: 'Style'
+          path_patterns:
+            - "**/*.rb"
+  reek:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+  brakeman:
+    enabled: true
+  duplication:
+    enabled: false
+  bundler-audit:
+    enabled: true
+
