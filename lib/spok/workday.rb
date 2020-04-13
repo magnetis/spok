@@ -1,12 +1,13 @@
 require 'active_support'
 require 'active_support/core_ext'
+require 'spok'
 
 class Spok
-  # Public: Various methods useful for checking for restdays and workdays.
+  # Internal: Various methods useful for checking for restdays and workdays.
   # All methods are module methods and should be called on the Spok::Workday
   # module.
   module Workday
-    # Public: Hash containing all weekdays.
+    # Internal: Hash containing all weekdays.
     WEEKDAYS = {
       sunday: 0,
       monday: 1,
@@ -17,7 +18,7 @@ class Spok
       saturday: 6
     }.freeze
 
-    # Public: Checks if a given day is a restday.
+    # Internal: Checks if a given day is a restday.
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
@@ -33,7 +34,7 @@ class Spok
       self.weekend?(date) || self.holiday?(date, calendar: calendar)
     end
 
-    # Public: Checks if a given day is a workday.
+    # Internal: Checks if a given day is a workday.
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
@@ -49,7 +50,7 @@ class Spok
       !restday?(date, calendar: calendar)
     end
 
-    # Public: Checks if a given Date is on a weekend.
+    # Internal: Checks if a given Date is on a weekend.
     #
     # date - The Date to be checked.
     #
@@ -65,7 +66,7 @@ class Spok
       [WEEKDAYS[:saturday], WEEKDAYS[:sunday]].include? weekday
     end
 
-    # Public: Checks if a given Date is on a holiday.
+    # Internal: Checks if a given Date is on a holiday.
     #
     # date     - The Date to be checked.
     # calendar - Symbol informing in which calendar the date will be checked
@@ -82,7 +83,7 @@ class Spok
       dates.include?(date.to_date)
     end
 
-    # Public: Returns the last workday until the informed date.
+    # Internal: Returns the last workday until the informed date.
     # It returns the informed date in case it is a workday.
     #
     # date     - End Date to check for workdays.
@@ -98,7 +99,7 @@ class Spok
       last_workday((date - 1.day), calendar: calendar)
     end
 
-    # Public: Returns the next workday starting from the informed date.
+    # Internal: Returns the next workday starting from the informed date.
     # It returns the informed date in case it is a workday.
     #
     # date     - Start Date to check for workdays.
@@ -112,6 +113,17 @@ class Spok
       return date if workday?(date, calendar: calendar)
 
       next_workday((date + 1.day), calendar: calendar)
+    end
+
+    class << self
+      extend Gem::Deprecate
+
+      deprecate :restday?, 'Spok.restday?', 2020, 12
+      deprecate :workday?, 'Spok.workday?', 2020, 12
+      deprecate :weekend?, 'Spok.weekend?', 2020, 12
+      deprecate :holiday?, 'Spok.holiday?', 2020, 12
+      deprecate :last_workday, 'Spok.last_workday', 2020, 12
+      deprecate :next_workday, 'Spok.next_workday', 2020, 12
     end
   end
 end

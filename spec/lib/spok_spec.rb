@@ -216,4 +216,64 @@ describe Spok do
       expect(default_calendar_was).to eq(:brazil)
     end
   end
+
+  describe '#restday?' do
+    it 'calls for the restday implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:restday?).with(date, calendar: :brazil).and_call_original
+
+      Spok.restday?(date)
+    end
+  end
+
+  describe '.workday?' do
+    it 'calls for the workday implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:workday?).with(date, calendar: :brazil).and_call_original
+
+      Spok.workday?(date)
+    end
+  end
+
+  describe '.weekend?' do
+    it 'calls for the weekend implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:weekend?).with(date).and_call_original
+
+      Spok.weekend?(date)
+    end
+  end
+
+  describe '.holiday?' do
+    it 'calls for the holiday implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:holiday?).with(date, calendar: :brazil).and_call_original
+
+      Spok.holiday?(date)
+    end
+  end
+
+  describe '.last_workday' do
+    it 'calls for the last workday implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:last_workday).with(date, calendar: :brazil).and_call_original
+
+      Spok.last_workday(date)
+    end
+  end
+
+  describe '.next_workday' do
+    it 'calls for the next workday implementation' do
+      date = Date.new(2020, 4, 9)
+
+      expect(Spok::Workday).to receive(:next_workday).with(date, calendar: :brazil).and_call_original
+
+      Spok.next_workday(date)
+    end
+  end
 end

@@ -117,6 +117,96 @@ class Spok
     (@start_date..@end_date).to_a.delete_if{ |date| Workday.restday?(date, calendar: calendar) }
   end
 
+  # Public: Checks if a given day is a restday.
+  #
+  # date     - The Date to be checked.
+  # calendar - Symbol informing in which calendar the date will be checked
+  #            (default: :brazil).
+  #
+  # Examples
+  #
+  #   Spok.restday?(Date.new(2012, 8, 6))
+  #   # => false
+  #
+  # Returns a boolean.
+  def self.restday?(date, calendar: Spok.default_calendar)
+    Workday.restday?(date, calendar: calendar)
+  end
+
+  # Public: Checks if a given day is a workday.
+  #
+  # date     - The Date to be checked.
+  # calendar - Symbol informing in which calendar the date will be checked
+  #            (default: :brazil).
+  #
+  # Examples
+  #
+  #   Spok.workday?(Date.new(2012, 8, 6))
+  #   # => true
+  #
+  # Returns a boolean.
+  def self.workday?(date, calendar: Spok.default_calendar)
+    Workday.workday?(date, calendar: calendar)
+  end
+
+  # Public: Checks if a given Date is on a weekend.
+  #
+  # date - The Date to be checked.
+  #
+  # Examples
+  #
+  #   Spok.weekend?(Date.new(2012, 8, 6))
+  #   # => false
+  #
+  # Returns a boolean.
+  def self.weekend?(date)
+    Workday.weekend?(date)
+  end
+
+  # Public: Checks if a given Date is on a holiday.
+  #
+  # date     - The Date to be checked.
+  # calendar - Symbol informing in which calendar the date will be checked
+  #            (default: :brazil).
+  #
+  # Examples
+  #
+  #   Spok.holiday?(Date.new(2012, 5, 1))
+  #   # => true
+  #
+  # Returns a boolean.
+  def self.holiday?(date, calendar: Spok.default_calendar)
+    Workday.holiday?(date, calendar: calendar)
+  end
+
+  # Public: Returns the last workday until the informed date.
+  # It returns the informed date in case it is a workday.
+  #
+  # date     - End Date to check for workdays.
+  # calendar - Symbol informing in which calendar the date will be checked
+  #            (default: :brazil).
+  #
+  # Examples
+  #   Spok.last_workday(Date.new(2012, 10, 21))
+  #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
+  def self.last_workday(date, calendar: Spok.default_calendar)
+    Workday.last_workday(date, calendar: calendar)
+  end
+
+  # Public: Returns the next workday starting from the informed date.
+  # It returns the informed date in case it is a workday.
+  #
+  # date     - Start Date to check for workdays.
+  # calendar - Symbol informing in which calendar the date will be checked
+  #            (default: :brazil).
+  #
+  # Examples
+  #   Spok.next_workday(Date.new(2012, 10, 21))
+  #   # => #<Date: 2012-10-19 ((2456220j,0s,0n),+0s,2299161j)>
+  def self.next_workday(date, calendar: Spok.default_calendar)
+    Workday.next_workday(date, calendar: calendar)
+  end
+
   # Public: Returns a Spok containing the same dates in a different calendar.
   #
   # calendar - Symbol informing calendar for new Spok (default: :brazil).
