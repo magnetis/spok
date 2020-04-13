@@ -3,7 +3,24 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.0.0] - 2019-10-24
+## [2.1.0] - 2020-04-13
+
+* Replace the access of `Spok::Workday` by `Spok` interface. 
+
+All methods before accessed by `Spok::Workday` module now is accessible by `Spok` interface.
+
+```ruby
+  Spok.restday?
+  Spok.workday?
+  Spok.weekend?
+  Spok.holiday?
+  Spok.last_workday
+  Spok.next_workday
+```
+
+You can still use the `Spok::Workday` interface but it will warn you about the deprecation. We are planning to drop the support of `Spok::Workday` by the end of 2020.
+
+## [2.0.1] - 2019-10-24
 
 * Relax `activesupport` dependency to include the `6.x` series
 
