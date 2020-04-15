@@ -3,9 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.1] - 2020-04-15
+
+* Remove deprecation warnings and create a note about it on README file.
+
 ## [2.1.0] - 2020-04-13
 
-* Replace the access of `Spok::Workday` by `Spok` interface. 
+* Replace the access of `Spok::Workday` by `Spok` interface.
 
 All methods before accessed by `Spok::Workday` module now is accessible by `Spok` interface.
 
