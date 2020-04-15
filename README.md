@@ -25,6 +25,8 @@ Or install it yourself as:
 
 ### Dealing with workdays
 
+NOTE: All methods available on `Spok::Workday` now are available on `Spok` interface, `Spok::Workday` still works but we have plans to make `Spok:: Workday` a private resource, you should update your code to rely on `Spok` interface.
+
 You can use the Spok to check if a date is either a rest day or a workday:
 
 ```ruby
@@ -43,7 +45,7 @@ restday.
 ```ruby
 require 'spok'
 
-Spok::Workday.workday?(Date.new(2012, 12, 24), calendar: :bovespa)
+Spok.workday?(Date.new(2012, 12, 24), calendar: :bovespa)
 # => false
 ```
 

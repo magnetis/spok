@@ -114,16 +114,5 @@ class Spok
 
       next_workday((date + 1.day), calendar: calendar)
     end
-
-    class << self
-      extend Gem::Deprecate
-
-      deprecate :restday?, 'Spok.restday?', 2020, 12
-      deprecate :workday?, 'Spok.workday?', 2020, 12
-      deprecate :weekend?, 'Spok.weekend?', 2020, 12
-      deprecate :holiday?, 'Spok.holiday?', 2020, 12
-      deprecate :last_workday, 'Spok.last_workday', 2020, 12
-      deprecate :next_workday, 'Spok.next_workday', 2020, 12
-    end
   end
 end
