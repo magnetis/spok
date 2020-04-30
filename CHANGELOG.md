@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.2] - 2020-04-29
+
+* Add 2020's Good Friday holiday on US calendar
+
 ## [2.1.1] - 2020-04-15
 
 * Remove deprecation warnings and create a note about it on README file.
