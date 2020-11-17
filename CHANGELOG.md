@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.3] - 2020-11-17
+
+* Remove 2020-11-20 holiday from Bovespa calendar due to their note about
+the day.
+Check it here: http://www.b3.com.br/pt_br/noticias/funcionamento-da-b3-8AE490C97215B74E0172959F18F11323.htm
+
 ## [2.1.2] - 2020-04-29
 
 * Add 2020's Good Friday holiday on US calendar
