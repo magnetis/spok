@@ -31,7 +31,7 @@ class Spok
     #
     # Returns a boolean.
     def self.restday?(date, calendar: Spok.default_calendar)
-      self.weekend?(date) || self.holiday?(date, calendar: calendar)
+      weekend?(date) && !shiftday?(date, calendar: calendar) || holiday?(date, calendar: calendar)
     end
 
     # Internal: Checks if a given day is a workday.
@@ -81,6 +81,25 @@ class Spok
     def self.holiday?(date, calendar: Spok.default_calendar)
       dates = Spok::Calendars.get(calendar)
       dates.include?(date.to_date)
+    end
+
+
+    # Internal: Checks if a given Date is on a shiftday ( original weekend but need working ).
+    #
+    # date     - The Date to be checked.
+    # calendar - Symbol informing in which calendar the date will be checked
+    #            (default: :brazil).
+    #
+    # Examples
+    #
+    #   Spok::Workday.shiftday?(Date.new(2020, 12, 5))
+    #   # => true
+    #
+    # Returns a boolean.
+
+    def self.shiftday?(date, calendar: Spok.default_calendar)
+      dates = Spok::Calendars.get(calendar)
+      dates.include?('E' + date.to_date.to_s('%F'))
     end
 
     # Internal: Returns the last workday until the informed date.
