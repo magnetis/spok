@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+    timezone: America/Sao_Paulo
+  pull-request-branch-name:
+    separator: "-"
+  open-pull-requests-limit: 10
+  assignees:
+  - lucasmazza
+  - philss
+  - ruan-brandao
