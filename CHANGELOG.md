@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.4] - 2022-06-28
+
+* Add Juneteenth holiday on US calendar from 2022 to 2028.
+
 ## [2.1.3] - 2020-11-17
 
 * Remove 2020-11-20 holiday from Bovespa calendar due to their note about
