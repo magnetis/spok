@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.6] - 2023-01-23
+
+* Add 2023's bovespa holidays.
+
 ## [2.1.5] - 2022-12-28
 
 * Add 2022-12-30 holiday on Bovespa calendar.
