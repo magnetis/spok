@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.7] - 2023-01-24
+
+* Remove Sao Paulo's anniversary from bovespa's calendar, since B3 will not
+consider it as a holiday and will operate as usual.
+
 ## [2.1.6] - 2023-01-23
 
 * Add 2023's bovespa holidays.
