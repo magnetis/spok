@@ -79,6 +79,7 @@ describe Spok::Workday do
         end
       end
     end
+
   end
 
   describe '#restday?' do
@@ -207,6 +208,24 @@ describe Spok::Workday do
           expect(described_class.last_workday(Date.new(2013, 1, 1), calendar: :bovespa)).to eq(Date.new(2012, 12, 28))
         end
       end
+    end
+  end
+
+  context 'exception_for_weekend' do
+    before do
+      Spok::Calendars.add(:custom_calendar, File.expand_path('../../fixtures/custom-calendar.yml', __dir__))
+    end
+
+    it do
+      expect(Spok::Workday.shiftday?(Date.new(2020, 12, 5), calendar: :custom_calendar)).to eq(true)
+    end
+
+    it do
+      expect(Spok::Workday.workday?(Date.new(2020, 12, 5), calendar: :custom_calendar)).to eq(true)
+    end
+
+    it do
+      expect(Spok::Workday.restday?(Date.new(2020, 12, 5), calendar: :custom_calendar)).to eq(false)
     end
   end
 
